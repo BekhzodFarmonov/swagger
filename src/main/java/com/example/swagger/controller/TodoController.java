@@ -3,8 +3,14 @@ package com.example.swagger.controller;
 import com.example.swagger.entity.Todo;
 import com.example.swagger.exseption.EntityNotFoundException;
 import com.example.swagger.repository.TodoRepository;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +20,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TodoController {
   private  final TodoRepository todoRepository;
+    @Tag(name = "Todo Controller",description = "This controller for todo entity")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Found Todo this for id",
+                    content = {
+                            @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation=Todo.class))
+                    }),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Found Todo this for id",
+                    content = {
+                            @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation=EntityNotFoundException.class))
+                    })
+
+    })
     @GetMapping("/{id}")
     public ResponseEntity<Todo> getComment(@PathVariable Integer id ){
 
