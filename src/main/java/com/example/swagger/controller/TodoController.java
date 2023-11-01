@@ -1,8 +1,8 @@
-package com.example.springboot.controller;
+package com.example.swagger.controller;
 
-import com.example.springboot.entity.Todo;
-import com.example.springboot.exseption.EntityNotFoundException;
-import com.example.springboot.repository.TodoRepository;
+import com.example.swagger.entity.Todo;
+import com.example.swagger.exseption.EntityNotFoundException;
+import com.example.swagger.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

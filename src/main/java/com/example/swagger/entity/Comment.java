@@ -1,7 +1,6 @@
-package com.example.springboot.entity;
+package com.example.swagger.entity;
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
