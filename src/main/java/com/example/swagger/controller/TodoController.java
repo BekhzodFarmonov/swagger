@@ -1,8 +1,10 @@
 package com.example.swagger.controller;
 
+import com.example.swagger.config.criteria.TodoCriteria;
 import com.example.swagger.entity.Todo;
 import com.example.swagger.exseption.EntityNotFoundException;
 import com.example.swagger.repository.TodoRepository;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -45,7 +47,8 @@ public class TodoController {
         return ResponseEntity.ok(todo);
     }
     @GetMapping("/")
-    public ResponseEntity<List<Todo>> getAllComment(){
+    public ResponseEntity<List<Todo>> getAllComment(TodoCriteria todoCriteria){
+        System.out.println("todoCriteria = " + todoCriteria);
         List<Todo> all = todoRepository.findAll();
         return ResponseEntity.ok(all);
     }
