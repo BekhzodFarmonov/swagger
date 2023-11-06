@@ -1,1 +1,14 @@
-example_string=Hello Pdp
+example:
+  string: >
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+   Hello Pdp
+  languages:
+   -Java
+   -Kotlin
+    -Phyton

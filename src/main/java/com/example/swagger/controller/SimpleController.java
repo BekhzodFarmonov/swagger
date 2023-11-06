@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
-public class SimpleController {
-    @Value("${example_string}")
+public class
+SimpleController {
+    @Value("${example.string}")
     private String exampleString;
     @GetMapping("/exaample")
     public String example(){
