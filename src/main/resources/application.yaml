@@ -9,6 +9,13 @@ example:
    Hello Pdp
    Hello Pdp
   languages:
-   -Java
-   -Kotlin
-    -Phyton
+   - Java
+   - Kotlin
+   - phyton
+  person:
+    id: ${random.uuid}
+    firstName: Behzod
+    lastName: Farmonov
+    fullName: ${example.person.firstName} ${example.person.lastName}
+    age: 21
+
