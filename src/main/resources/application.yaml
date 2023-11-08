@@ -1,21 +1,11 @@
-example:
-  string: >
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-   Hello Pdp
-  languages:
-   - Java
-   - Kotlin
-   - phyton
-  person:
-    id: ${random.uuid}
-    firstName: Behzod
-    lastName: Farmonov
-    fullName: ${example.person.firstName} ${example.person.lastName}
-    age: 21
-
+spring:
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 587
+    username: 1df3230b362991
+    password: ff52c428fce14a
+    properties:
+      smtp:
+        auth:true
+    starttls:
+          enable:true
